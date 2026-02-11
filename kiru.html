@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN - FrameApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: linear-gradient(180deg, #a100ff, #ff5fd8);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(180deg, #ff4fa1, #a100ff);
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .login-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.75);
+        }
+
+        .login-container p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .login-container p a {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Log In</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Log in</button>
+    <button onclick="loginGuest()" style="margin-top:10px;">Continue as Guest</button>
+    <p>Not registered? <a href="tirkelu.html">Register</a></p>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+    import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app-check.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCr6pAI4GCkwnlZEBq_1M1dWeWpGtrn1a4",
+        authDomain: "frameacademy-bb04a.firebaseapp.com",
+        projectId: "frameacademy-bb04a",
+        storageBucket: "frameacademy-bb04a.firebasestorage.app",
+        messagingSenderId: "1018686855581",
+        appId: "1:1018686855581:web:e4f5d6f42ee6d43ba8b774",
+        measurementId: "G-SDMK2NPGBZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    initializeAppCheck(app, {
+        provider: new ReCaptchaEnterpriseProvider("6Leh0WYsAAAAAHISvriKLV94fJuWFuJRgIaXbGUb"),
+        isTokenAutoRefreshEnabled: true
+    });
+
+    let toastTimer;
+    function showToast(message) {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'toast';
+            toast.className = 'toast';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = '';
+        const title = document.createElement('div');
+        title.className = 'toast-title';
+        title.textContent = 'Push notification';
+        const msg = document.createElement('div');
+        msg.className = 'toast-msg';
+        msg.textContent = message;
+        toast.appendChild(title);
+        toast.appendChild(msg);
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2400);
+    }
+
+    window.login = async () => {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPass').value;
+        if (!email || !password) {
+            showToast("Please fill in all fields!");
+            return;
+        }
+
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            showToast(`Log in: ${userCredential.user.email}`);
+            
+            window.location.href = "index.html";
+        } catch (error) {
+            showToast(error.message);
+        }
+    }
+
+    window.loginGuest = () => {
+        const profile = JSON.parse(localStorage.getItem('profile') || '{}');
+        if (!profile.name) profile.name = "Guest";
+        localStorage.setItem('profile', JSON.stringify(profile));
+        window.location.href = "index.html";
+    }
+
+</script>
+
+</body>
+</html>

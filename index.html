@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>FrameAcademy App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="has-hero">
+    <header>
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg?semt=ais_hybrid&w=740&q=80" alt="FrameAcademy logo">
+            <span>FrameAcademy App</span>
+        </div>
+        <nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="social.html">SOCIAL MEDIA</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <div class="user-chip">
+            <img id="headerAvatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User avatar">
+            <span id="headerName">USER</span>
+        </div>
+        <div class="menu">☰</div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+    <div class="side-header">
+        <div class="user-avatar">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User avatar">
+        </div>
+        <h3>USER_NAME</h3>
+        <div class="side-email" id="sideEmail">user@email.com</div>
+        <p>City • Age</p>
+    </div>
+
+    <div class="side-links">
+        <button id="editProfileBtn" class="profile-btn">Edit Profile</button>
+        <a href="index.html">HOME</a>
+        <a href="aboutus.html">ABOUT</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="social.html">SOCIAL MEDIA</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="auth-buttons">
+            <a id="loginBtn" href="kiru.html" class="auth-btn">Log in</a>
+            <a id="registerBtn" href="tirkelu.html" class="auth-btn">Register</a>
+            <button id="logoutBtn" class="auth-btn" onclick="logout()" style="display:none;">Log Out</button>
+        </div>
+    </div>
+
+    <div class="side-overlay" id="sideOverlay"></div>
+
+
+    <section class="hero">
+        <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e')"></div>
+        <div class="slide" style="background-image:url('https://resize.tripster.ru/0tDEr_rJhL-yJeHZQRP1dqMFces=/fit-in/1200x1000/filters:no_upscale()/https://cdn.tripster.ru/photos/e68022db-fb64-4932-be2e-f4969c82877d.jpg')"></div>
+        
+        <div class="overlay"></div>
+        
+        <div class="center">
+            <h1>WELCOME TO<br> FRAME ACADEMY SUPER APP!</h1>
+            <button class="start">START</button>
+            <div class="hero-actions">
+                <a class="start secondary" href="bkz.html">Release BlackKZ</a>
+                <div class="download-wrap">
+                    <a id="downloadBtn" class="start secondary" href="#" role="button">Download FrameApp</a>
+                    <input id="downloadFile" type="file" class="download-input" />
+                    <div id="downloadNote" class="download-note">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+        <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+        
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="scroll-btn" onclick="scrollDown()">↓</div>
+    </section>
+
+    <section class="next" id="next">
+        <div class="next-content">
+            <h2>Second Section</h2>
+            <p>This section appears when you click the scroll button. It has a white background.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>First Feature</h3>
+                    <p>You can reach this section by clicking the scroll button.</p>
+                </div>
+                <div class="feature">
+                    <h3>Second Feature</h3>
+                    <p>This section has a white background and stands out from the first section.</p>
+                </div>
+                <div class="feature">
+                    <h3>Third Feature</h3>
+                    <p>The slideshow continues in the first section; this section is independent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="profile-modal" id="profileModal">
+        <div class="modal-card">
+            <div class="modal-title">Edit Profile</div>
+            <div class="modal-grid">
+                <div class="modal-field">
+                    <label for="profileName">Name</label>
+                    <input id="profileName" type="text" placeholder="Your name">
+                </div>
+                <div class="modal-field">
+                    <label for="profileCity">City</label>
+                    <input id="profileCity" type="text" placeholder="Your city">
+                </div>
+                <div class="modal-field">
+                    <label for="profileAge">Age</label>
+                    <input id="profileAge" type="number" min="1" max="120" placeholder="Your age">
+                </div>
+                <div class="modal-field">
+                    <label for="profileAvatarFile">Avatar file</label>
+                    <input id="profileAvatarFile" type="file" accept="image/*">
+                </div>
+            </div>
+            <div class="modal-row">
+                <img id="profileAvatarPreview" class="avatar-preview" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar preview">
+                <div>Preview</div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="profileCancel">Cancel</button>
+                <button class="btn-primary" id="profileSave">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".slide");
+            const dots = document.querySelectorAll(".dot");
+            let index = 0;
+            let timer;
+
+            function showSlide(i) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                dots.forEach(dot => dot.classList.remove("active"));
+                index = (i + slides.length) % slides.length;
+                slides[index].classList.add("active");
+                dots[index].classList.add("active");
+            }
+
+            function nextSlide() {
+                showSlide(index + 1);
+            }
+
+            function prevSlide() {
+                showSlide(index - 1);
+            }
+
+            window.nextSlide = nextSlide;
+            window.prevSlide = prevSlide;
+
+            function startAutoSlide() {
+                timer = setInterval(nextSlide, 4000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(timer);
+            }
+
+            startAutoSlide();
+
+            document.querySelector(".hero").addEventListener("mouseenter", stopAutoSlide);
+            document.querySelector(".hero").addEventListener("mouseleave", startAutoSlide);
+        });
+
+        function scrollDown() {
+            document.getElementById('next').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <script>
+const menuBtn = document.querySelector('.menu');
+const sideMenu = document.getElementById('sideMenu');
+const overlay = document.getElementById('sideOverlay');
+
+menuBtn.addEventListener('click', () => {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+});
+
+overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+});
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
+  import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app-check.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCr6pAI4GCkwnlZEBq_1M1dWeWpGtrn1a4",
+    authDomain: "frameacademy-bb04a.firebaseapp.com",
+    projectId: "frameacademy-bb04a",
+    storageBucket: "frameacademy-bb04a.firebasestorage.app",
+    messagingSenderId: "1018686855581",
+    appId: "1:1018686855581:web:e4f5d6f42ee6d43ba8b774",
+    measurementId: "G-SDMK2NPGBZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  initializeAppCheck(app, {
+    provider: new ReCaptchaEnterpriseProvider("6Leh0WYsAAAAAHISvriKLV94fJuWFuJRgIaXbGUb"),
+    isTokenAutoRefreshEnabled: true
+  });
+
+  const loginBtn = document.getElementById('loginBtn');
+  const registerBtn = document.getElementById('registerBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const userNameH3 = document.querySelector('.side-header h3');
+  const userMetaP = document.querySelector('.side-header p');
+  const sideEmail = document.getElementById('sideEmail');
+  const sideAvatar = document.querySelector('.side-header img');
+  const headerName = document.getElementById('headerName');
+  const headerAvatar = document.getElementById('headerAvatar');
+  const editProfileBtn = document.getElementById('editProfileBtn');
+  const profileModal = document.getElementById('profileModal');
+  const profileName = document.getElementById('profileName');
+  const profileCity = document.getElementById('profileCity');
+  const profileAge = document.getElementById('profileAge');
+  const profileAvatarFile = document.getElementById('profileAvatarFile');
+  const profileAvatarPreview = document.getElementById('profileAvatarPreview');
+  const profileSave = document.getElementById('profileSave');
+  const profileCancel = document.getElementById('profileCancel');
+  let pendingAvatarData = "";
+  let toastTimer;
+
+  function showToast(message) {
+    let toast = document.getElementById('toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'toast';
+      toast.className = 'toast';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = '';
+    const title = document.createElement('div');
+    title.className = 'toast-title';
+    title.textContent = 'Push notification';
+    const msg = document.createElement('div');
+    msg.className = 'toast-msg';
+    msg.textContent = message;
+    toast.appendChild(title);
+    toast.appendChild(msg);
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2400);
+  }
+
+  function getProfile() {
+    const raw = localStorage.getItem('profile');
+    if (!raw) return { name: "", city: "", age: "", avatarData: "" };
+    try { return JSON.parse(raw); } catch { return { name: "", city: "", age: "", avatarData: "" }; }
+  }
+
+  function setProfile(profile) {
+    localStorage.setItem('profile', JSON.stringify(profile));
+  }
+
+  async function fetchProfile(user) {
+    if (!user) return getProfile();
+    try {
+      const snap = await getDoc(doc(db, "users", user.uid));
+      if (snap.exists()) {
+        const data = snap.data();
+        const profile = {
+          name: data.name || "",
+          city: data.city || "",
+          age: data.age || "",
+          avatarData: data.avatarData || ""
+        };
+        setProfile(profile);
+        return profile;
+      }
+    } catch (err) {
+      console.warn("Profile load failed:", err);
+    }
+    return getProfile();
+  }
+
+  async function applyProfile(user) {
+    const profile = await fetchProfile(user);
+    const displayName = profile.name || (user && (user.displayName || user.email || user.phoneNumber)) || "USER";
+    const city = profile.city || "City";
+    const age = profile.age || "Age";
+    const avatar = profile.avatarData || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+    const email = (user && user.email) ? user.email : "";
+
+    if (userNameH3) userNameH3.textContent = displayName;
+    if (userMetaP) userMetaP.textContent = `${city} • ${age}`;
+    if (sideEmail) sideEmail.textContent = email || "";
+    if (sideAvatar) sideAvatar.src = avatar;
+    if (headerName) headerName.textContent = displayName;
+    if (headerAvatar) headerAvatar.src = avatar;
+    if (profileAvatarPreview) profileAvatarPreview.src = avatar;
+  }
+
+  window.showLoginForm = async () => {
+    const email = prompt("Enter email:");
+    const password = prompt("Enter password:");
+    if (!email || !password) return;
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      showToast(`Signed in: ${userCredential.user.email}`);
+      document.getElementById('sideMenu').classList.remove('active');
+      document.getElementById('sideOverlay').classList.remove('active');
+    } catch (error) {
+      showToast(error.message);
+    }
+  }
+
+  window.showRegisterForm = async () => {
+    const email = prompt("Enter email:");
+    const password = prompt("Enter password (min 6 chars):");
+    if (!email || !password) return;
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      showToast(`Registered: ${userCredential.user.email}`);
+      document.getElementById('sideMenu').classList.remove('active');
+      document.getElementById('sideOverlay').classList.remove('active');
+    } catch (error) {
+      showToast(error.message);
+    }
+  }
+
+  window.logout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem('profile');
+      await applyProfile(null);
+      showToast("Signed out");
+      document.getElementById('sideMenu').classList.remove('active');
+      document.getElementById('sideOverlay').classList.remove('active');
+    } catch(err){
+      showToast(err.message);
+    }
+  }
+
+  onAuthStateChanged(auth, async (user) => {
+    if(user){
+      await applyProfile(user);
+      loginBtn.style.display = 'none';
+      registerBtn.style.display = 'none';
+      logoutBtn.style.display = 'block';
+    } else {
+      await applyProfile(null);
+      loginBtn.style.display = 'inline-block';
+      registerBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'none';
+    }
+  });
+
+  if (editProfileBtn && profileModal) {
+    editProfileBtn.addEventListener('click', () => {
+      const current = getProfile();
+      profileName.value = current.name || "";
+      profileCity.value = current.city || "";
+      profileAge.value = current.age || "";
+      pendingAvatarData = current.avatarData || "";
+      profileAvatarPreview.src = pendingAvatarData || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+      profileAvatarFile.value = "";
+      profileModal.classList.add('active');
+    });
+  }
+
+  if (profileCancel && profileModal) {
+    profileCancel.addEventListener('click', () => {
+      profileModal.classList.remove('active');
+    });
+  }
+
+  if (profileAvatarFile) {
+    profileAvatarFile.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        pendingAvatarData = String(reader.result || "");
+        profileAvatarPreview.src = pendingAvatarData;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (profileSave && profileModal) {
+    profileSave.addEventListener('click', async () => {
+      const updated = {
+        name: profileName.value.trim(),
+        city: profileCity.value.trim(),
+        age: profileAge.value.trim(),
+        avatarData: pendingAvatarData
+      };
+      setProfile(updated);
+      if (auth.currentUser) {
+        try {
+          await setDoc(doc(db, "users", auth.currentUser.uid), updated, { merge: true });
+        } catch (err) {
+          console.warn("Profile save failed:", err);
+        }
+      }
+      await applyProfile(auth.currentUser || null);
+      profileModal.classList.remove('active');
+    });
+  }
+</script>
+
+<script>
+  const downloadBtn = document.getElementById('downloadBtn');
+  const downloadFile = document.getElementById('downloadFile');
+  const downloadNote = document.getElementById('downloadNote');
+
+  if (downloadBtn && downloadFile) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      downloadFile.click();
+    });
+
+    downloadFile.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      downloadBtn.href = url;
+      downloadBtn.setAttribute('download', file.name);
+      downloadNote.textContent = "Ready to download";
+    });
+  }
+</script>
+
+</body>
+</html>
