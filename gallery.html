@@ -450,8 +450,10 @@
       if (auth.currentUser) {
         try {
           await setDoc(doc(db, "users", auth.currentUser.uid), updated, { merge: true });
+          showToast("Profile saved");
         } catch (err) {
           console.warn("Profile save failed:", err);
+          showToast("Profile save failed");
         }
       }
       await applyProfile(auth.currentUser || null);
