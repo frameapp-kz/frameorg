@@ -1,0 +1,273 @@
+const translations = {
+  en: {
+    nav_home: "HOME",
+    nav_about: "ABOUT",
+    nav_gallery: "GALLERY",
+    nav_social: "SOCIAL MEDIA",
+    nav_contact: "CONTACT",
+    btn_start: "START",
+    btn_release_bkz: "Release BlackKZ",
+    btn_download: "Download FrameApp",
+    txt_coming_soon: "Coming Soon",
+    download_ready: "Ready to download",
+    open_browser: "Open in Browser",
+    open_app: "Open App",
+    open_sub: "Choose how you want to open",
+    close: "Close",
+    index_title: "WELCOME TO<br>FRAME ACADEMY SUPER APP!",
+    index_section_title: "Second Section",
+    index_section_p1: "This section appears when you click the scroll button. It has a white background.",
+    index_feature1_title: "First Feature",
+    index_feature1_p: "You can reach this section by clicking the scroll button.",
+    index_feature2_title: "Second Feature",
+    index_feature2_p: "This section has a white background and stands out from the first section.",
+    index_feature3_title: "Third Feature",
+    index_feature3_p: "The slideshow continues in the first section; this section is independent.",
+    about_title: "ABOUT US",
+    about_h2: "About Us",
+    about_p1: "Here you can write detailed information about your website. You can include the company history, goals, projects, and mission — everything can be placed here.",
+    about_p2: "No matter how long the text is, a scroll will appear inside the block. The design stays clean. The white background, soft corners, and shadow match your current style.",
+    about_p3: "You can add several paragraphs here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about_p4: "More text... More text... More text... You can add as much content as you like.",
+    gallery_title: "GALLERY",
+    social_pill: "Home page menu",
+    social_title: "SOCIAL MEDIA",
+    contact_title: "CONTACT",
+    contact_subtitle: "You can reach us at any time. This section contains full information about phone numbers, email addresses, working hours, location, and ways to get in touch.",
+    contact_phone_title: "Phone",
+    contact_phone_p: "Call us directly to get quick consultation.",
+    contact_email_title: "Email",
+    contact_email_p: "Send your questions and suggestions by email.",
+    contact_hours_title: "Working Hours",
+    contact_hours_p1: "Monday – Friday: 09:00 – 20:00",
+    contact_hours_p2: "Saturday: 10:00 – 16:00",
+    contact_hours_p3: "Sunday: Closed",
+    contact_address_title: "Address",
+    contact_address_p1: "Kazakhstan, Almaty, Abylai Khan Ave 123",
+    contact_address_p2: "Office: 4th floor, Room 405",
+    contact_long: "Every message matters to us. If you have questions about programs, courses, pricing, or partnerships, you can call us or send an email. You can also leave feedback or suggestions. We aim to reply during business days as quickly as possible. For urgent issues, calling us directly is the fastest option.",
+    bkz_title: "Release BlackKZ",
+    bkz_p: "This page contains information about Release BlackKZ. You can add news, release versions, change logs, and key features here. Update this section anytime as needed.",
+    edit_profile: "Edit Profile",
+    profile_title: "Edit Profile",
+    profile_name: "Name",
+    profile_city: "City",
+    profile_age: "Age",
+    profile_avatar: "Avatar file",
+    profile_preview: "Preview",
+    profile_cancel: "Cancel",
+    profile_save: "Save",
+    profile_meta: "City • Age",
+    auth_login: "Log in",
+    auth_register: "Register",
+    auth_logout: "Log Out",
+    login_title: "Log In",
+    login_btn: "Log in",
+    login_guest: "Continue as Guest",
+    login_not_registered: "Not registered?",
+    register_title: "Register",
+    register_btn: "Register",
+    register_guest: "Continue as Guest",
+    register_have_account: "If you are registered?",
+    placeholder_email: "Email",
+    placeholder_password: "Password",
+    placeholder_new_password: "New password",
+    hero_scroll: "Scroll"
+  },
+  kk: {
+    nav_home: "БАСТЫ",
+    nav_about: "БІЗ ТУРАЛЫ",
+    nav_gallery: "ГАЛЕРЕЯ",
+    nav_social: "ӘЛЕУМЕТТІК ЖЕЛІ",
+    nav_contact: "БАЙЛАНЫС",
+    btn_start: "БАСТАУ",
+    btn_release_bkz: "Release BlackKZ",
+    btn_download: "FrameApp ЖҮКТЕУ",
+    txt_coming_soon: "Жақында",
+    download_ready: "Жүктеуге дайын",
+    open_browser: "Браузерде ашу",
+    open_app: "Қосымшаны ашу",
+    open_sub: "Қалай ашатыныңызды таңдаңыз",
+    close: "Жабу",
+    index_title: "FRAME ACADEMY SUPER APP<br>ҚОШ КЕЛДІҢІЗ!",
+    index_section_title: "Екінші бөлім",
+    index_section_p1: "Бұл бөлім скролл түймесін басқанда көрінеді. Фоны ақ.",
+    index_feature1_title: "Бірінші мүмкіндік",
+    index_feature1_p: "Бұл бөлімге скролл түймесін басу арқылы келуге болады.",
+    index_feature2_title: "Екінші мүмкіндік",
+    index_feature2_p: "Бұл бөлімнің фоны ақ және бірінші бөлімнен ерекшеленеді.",
+    index_feature3_title: "Үшінші мүмкіндік",
+    index_feature3_p: "Слайд-шоу бірінші бөлімде жалғасады, бұл бөлім тәуелсіз.",
+    about_title: "БІЗ ТУРАЛЫ",
+    about_h2: "Біз туралы",
+    about_p1: "Мұнда сайтыңыз туралы толық ақпарат жаза аласыз. Компания тарихы, мақсаттары, жобалар және миссия — бәрін осы жерге орналастыруға болады.",
+    about_p2: "Мәтін ұзақ болса да, блок ішінде скролл пайда болады. Дизайн бұзылмайды. Ақ фон, жұмсақ бұрыштар және көлеңке стиліңізге сай.",
+    about_p3: "Мұнда бірнеше абзац жаза аласыз. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about_p4: "Тағы мәтін... Тағы мәтін... Тағы мәтін... Қалағаныңызша контент қосыңыз.",
+    gallery_title: "ГАЛЕРЕЯ",
+    social_pill: "Басты бет мәзірі",
+    social_title: "ӘЛЕУМЕТТІК ЖЕЛІ",
+    contact_title: "БАЙЛАНЫС",
+    contact_subtitle: "Бізбен кез келген уақытта байланыса аласыз. Бұл бөлімде телефон, пошта, жұмыс уақыты, мекенжай және байланыс жолдары берілген.",
+    contact_phone_title: "Телефон",
+    contact_phone_p: "Жедел кеңес алу үшін қоңырау шалыңыз.",
+    contact_email_title: "Электронды пошта",
+    contact_email_p: "Сұрақтарыңыз бен ұсыныстарыңызды пошта арқылы жіберіңіз.",
+    contact_hours_title: "Жұмыс уақыты",
+    contact_hours_p1: "Дүйсенбі – Жұма: 09:00 – 20:00",
+    contact_hours_p2: "Сенбі: 10:00 – 16:00",
+    contact_hours_p3: "Жексенбі: Демалыс",
+    contact_address_title: "Мекенжай",
+    contact_address_p1: "Қазақстан, Алматы қ., Абылай хан даңғылы, 123",
+    contact_address_p2: "Кеңсе: 4-қабат, 405-бөлме",
+    contact_long: "Әрбір хабарлама біз үшін маңызды. Бағдарламалар, курстар, бағалар немесе серіктестік бойынша сұрақтарыңыз болса, қоңырау шалыңыз немесе поштаға жазыңыз. Ұсыныстар қалдыруға болады. Жұмыс күндері жауап беруге тырысамыз. Жедел мәселе болса, телефон арқылы хабарласқаныңыз дұрыс.",
+    bkz_title: "Release BlackKZ",
+    bkz_p: "Бұл бетте Release BlackKZ туралы ақпарат беріледі. Мұнда жаңалықтар, нұсқалар, өзгерістер тізімі және негізгі мүмкіндіктерді қосуға болады.",
+    edit_profile: "Профильді өңдеу",
+    profile_title: "Профильді өңдеу",
+    profile_name: "Аты",
+    profile_city: "Қаласы",
+    profile_age: "Жасы",
+    profile_avatar: "Аватар файлы",
+    profile_preview: "Алдын ала көру",
+    profile_cancel: "Бас тарту",
+    profile_save: "Сақтау",
+    profile_meta: "Қала • Жас",
+    auth_login: "Кіру",
+    auth_register: "Тіркелу",
+    auth_logout: "Шығу",
+    login_title: "Кіру",
+    login_btn: "Кіру",
+    login_guest: "Қонақ ретінде",
+    login_not_registered: "Тіркелмегенсіз бе?",
+    register_title: "Тіркелу",
+    register_btn: "Тіркелу",
+    register_guest: "Қонақ ретінде",
+    register_have_account: "Тіркелгенсіз бе?",
+    placeholder_email: "Email",
+    placeholder_password: "Құпия сөз",
+    placeholder_new_password: "Жаңа құпия сөз",
+    hero_scroll: "Төмен"
+  },
+  zh: {
+    nav_home: "主页",
+    nav_about: "关于我们",
+    nav_gallery: "画廊",
+    nav_social: "社交媒体",
+    nav_contact: "联系",
+    btn_start: "开始",
+    btn_release_bkz: "Release BlackKZ",
+    btn_download: "下载 FrameApp",
+    txt_coming_soon: "即将推出",
+    download_ready: "准备下载",
+    open_browser: "在浏览器中打开",
+    open_app: "打开应用",
+    open_sub: "请选择打开方式",
+    close: "关闭",
+    index_title: "欢迎来到<br>FRAME ACADEMY SUPER APP!",
+    index_section_title: "第二部分",
+    index_section_p1: "点击滚动按钮后显示的部分，背景为白色。",
+    index_feature1_title: "功能一",
+    index_feature1_p: "点击滚动按钮即可进入此部分。",
+    index_feature2_title: "功能二",
+    index_feature2_p: "此部分为白色背景，与第一部分区分明显。",
+    index_feature3_title: "功能三",
+    index_feature3_p: "幻灯片在第一部分继续，此部分独立。",
+    about_title: "关于我们",
+    about_h2: "关于我们",
+    about_p1: "这里可以写网站的详细信息，包括公司历史、目标、项目和使命。",
+    about_p2: "无论文本多长，区块内都会出现滚动条，设计保持整洁。",
+    about_p3: "这里可以添加多段文字。Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    about_p4: "更多文字... 可按需添加内容。",
+    gallery_title: "画廊",
+    social_pill: "主页菜单",
+    social_title: "社交媒体",
+    contact_title: "联系",
+    contact_subtitle: "可随时联系我们。本节包含电话、邮箱、工作时间、地址和联系方式。",
+    contact_phone_title: "电话",
+    contact_phone_p: "直接来电获取快速咨询。",
+    contact_email_title: "邮箱",
+    contact_email_p: "通过邮箱发送问题和建议。",
+    contact_hours_title: "工作时间",
+    contact_hours_p1: "周一至周五：09:00 – 20:00",
+    contact_hours_p2: "周六：10:00 – 16:00",
+    contact_hours_p3: "周日：休息",
+    contact_address_title: "地址",
+    contact_address_p1: "哈萨克斯坦，阿拉木图，阿拜拉汗大道123号",
+    contact_address_p2: "办公室：4楼，405室",
+    contact_long: "每一条消息对我们都很重要。如有课程、价格或合作问题，请致电或发送邮件。我们会尽快在工作日回复。",
+    bkz_title: "Release BlackKZ",
+    bkz_p: "本页面用于发布 BlackKZ 相关信息，可添加新闻、版本和更新日志。",
+    edit_profile: "编辑资料",
+    profile_title: "编辑资料",
+    profile_name: "姓名",
+    profile_city: "城市",
+    profile_age: "年龄",
+    profile_avatar: "头像文件",
+    profile_preview: "预览",
+    profile_cancel: "取消",
+    profile_save: "保存",
+    profile_meta: "城市 • 年龄",
+    auth_login: "登录",
+    auth_register: "注册",
+    auth_logout: "退出",
+    login_title: "登录",
+    login_btn: "登录",
+    login_guest: "游客访问",
+    login_not_registered: "未注册？",
+    register_title: "注册",
+    register_btn: "注册",
+    register_guest: "游客访问",
+    register_have_account: "已注册？",
+    placeholder_email: "邮箱",
+    placeholder_password: "密码",
+    placeholder_new_password: "新密码",
+    hero_scroll: "向下"
+  }
+};
+
+function getLang() {
+  return localStorage.getItem("lang") || "en";
+}
+
+function setLang(lang) {
+  localStorage.setItem("lang", lang);
+  applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+  const dict = translations[lang] || translations.en;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (dict[key]) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key]) el.setAttribute("placeholder", dict[key]);
+  });
+  document.querySelectorAll("[data-lang-select]").forEach((sel) => {
+    sel.value = lang;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = getLang();
+  applyLanguage(lang);
+  document.querySelectorAll("[data-lang-select]").forEach((sel) => {
+    sel.addEventListener("change", (e) => setLang(e.target.value));
+  });
+});
+
+window.i18n = {
+  t: (key) => {
+    const lang = getLang();
+    const dict = translations[lang] || translations.en;
+    return dict[key] || translations.en[key] || key;
+  },
+  setLang,
+  getLang
+};
